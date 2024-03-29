@@ -20,7 +20,7 @@ function ExploreButton() {
               rotate: -360,
             }}
             transition={{ duration: 1, type: "spring" }}
-            className={`${bellafair.className} bg-white rounded-full text-center text-lg tracking-widest uppercase px-8 py-16 text-primary-black`}
+            className={`${bellafair.className} bg-white rounded-full text-center text-lg md:text-2xl tracking-widest uppercase px-8 md:px-10 py-16 md:py-20 text-primary-black`}
           >
             Explore
           </motion.div>

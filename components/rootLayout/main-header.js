@@ -14,8 +14,9 @@ import hamburgerIcon from "@/public/assets/shared/icon-hamburger.svg";
 // framer-motion
 import { motion, AnimatePresence } from "framer-motion";
 
-// components
+// custom components
 import AsideNavigationBar from "./aside-navigation-bar";
+import MainNavbar from "./main-navbar";
 
 function MainHeader() {
   const [isAsideOpen, setIsAsideOpen] = useState(false);
@@ -29,45 +30,56 @@ function MainHeader() {
   };
 
   return (
-    <motion.header
-      initial={{ y: -60, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ type: "spring" }}
-      className="z-10 w-full fixed top-0 flex items-center justify-between p-5"
-    >
-      <motion.div
-        whileTap={{
-          scale: 0.8,
-        }}
+    <AnimatePresence>
+      <motion.header
+        initial={{ y: -60, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ type: "spring" }}
+        className="z-10 w-full fixed top-0 flex items-center justify-between p-5 md:p-0"
       >
-        <Link href="/">
-          <Image
-            src={brandLogo}
-            alt="Space tourism's brand logo."
-            width="42"
-            height="42"
-          />
-        </Link>
-      </motion.div>
-      <motion.div
-        whileTap={{
-          scale: 0.8,
-        }}
-        onClick={openAsideBar}
-      >
+        <motion.div
+          whileTap={{
+            scale: 0.8,
+          }}
+          className="md:py-5 md:mx-10"
+        >
+          <Link href="/">
+            <Image
+              src={brandLogo}
+              alt="Space tourism's brand logo."
+              width="42"
+              height="42"
+            />
+          </Link>
+        </motion.div>
+
+        {/* hamburger icon for only sm devices */}
+
         {!isAsideOpen && (
-          <Image
-            src={hamburgerIcon}
-            alt="An icon for to opening aside navigation bar."
-            width="32px"
-            height="32px"
-          />
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            whileTap={{
+              scale: 0.8,
+            }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            onClick={openAsideBar}
+            className="md:hidden"
+          >
+            <Image
+              src={hamburgerIcon}
+              alt="An icon for to opening aside navigation bar."
+              width="32px"
+              height="32px"
+            />
+          </motion.div>
         )}
-      </motion.div>
-      <AnimatePresence>
+        {/* main navigation bar for md devices */}
+        <MainNavbar />
+        {/* aside navigation bar for only sm devices */}
         {isAsideOpen && <AsideNavigationBar onClose={closeAsideBar} />}
-      </AnimatePresence>
-    </motion.header>
+      </motion.header>
+    </AnimatePresence>
   );
 }
 
