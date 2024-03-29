@@ -1,7 +1,9 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
+// next.js fonts
+import { barlow } from "@/lib/fonts";
 
-const inter = Inter({ subsets: ["latin"] });
+// custom components
+import MainHeader from "@/components/rootLayout/main-header";
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +13,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${barlow.className} bg-primary-black`}>
+        <MainHeader />
+        {children}
+        <div id="aside"></div>
+      </body>
     </html>
   );
 }
