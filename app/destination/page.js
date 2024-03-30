@@ -1,6 +1,6 @@
 function DestinationPage() {
   return (
-    <div>DestinationPage</div>
+    <div>Test</div>
   )
 }
 
