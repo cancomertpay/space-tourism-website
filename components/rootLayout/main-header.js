@@ -30,56 +30,63 @@ function MainHeader() {
   };
 
   return (
-    <AnimatePresence>
-      <motion.header
-        initial={{ y: -60, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ type: "spring" }}
-        className="z-10 w-full fixed top-0 flex items-center justify-between p-5 md:p-0"
+    <motion.header
+      initial={{ y: -60, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.8, type: "spring" }}
+      className="z-10 w-full fixed top-0 lg:top-10 flex items-center justify-between p-5 md:p-0"
+    >
+      {/* brand logo */}
+      <motion.div
+        whileTap={{
+          scale: 0.8,
+        }}
+        className="md:py-5 md:mx-10 flex items-center justify-center"
       >
+        <Link href="/">
+          <Image
+            src={brandLogo}
+            alt="Space tourism's brand logo."
+            width="42"
+            height="42"
+          />
+        </Link>
+      </motion.div>
+      {/* underline for only lg devices */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.6 }}
+        className="hidden lg:block border-b-2 border-pale-blue/30 w-1/3 -mr-28 z-20"
+      />
+      {/* hamburger icon for only sm devices */}
+      {!isAsideOpen && (
         <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           whileTap={{
             scale: 0.8,
           }}
-          className="md:py-5 md:mx-10"
+          exit={{ opacity: 0 }}
+          transition={{ delay: 0.4 }}
+          onClick={openAsideBar}
+          className="md:hidden"
         >
-          <Link href="/">
-            <Image
-              src={brandLogo}
-              alt="Space tourism's brand logo."
-              width="42"
-              height="42"
-            />
-          </Link>
+          <Image
+            src={hamburgerIcon}
+            alt="An icon for to opening aside navigation bar."
+            width="32px"
+            height="32px"
+          />
         </motion.div>
-
-        {/* hamburger icon for only sm devices */}
-
-        {!isAsideOpen && (
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            whileTap={{
-              scale: 0.8,
-            }}
-            exit={{ scale: 0.8, opacity: 0 }}
-            onClick={openAsideBar}
-            className="md:hidden"
-          >
-            <Image
-              src={hamburgerIcon}
-              alt="An icon for to opening aside navigation bar."
-              width="32px"
-              height="32px"
-            />
-          </motion.div>
-        )}
-        {/* main navigation bar for md devices */}
-        <MainNavbar />
-        {/* aside navigation bar for only sm devices */}
+      )}
+      {/* main navigation bar for md devices */}
+      <MainNavbar />
+      {/* aside navigation bar for only sm devices */}
+      <AnimatePresence>
         {isAsideOpen && <AsideNavigationBar onClose={closeAsideBar} />}
-      </motion.header>
-    </AnimatePresence>
+      </AnimatePresence>
+    </motion.header>
   );
 }
 

@@ -67,7 +67,7 @@ function Modal({ onClose }) {
       onClick={handleClickOutside}
     >
       <motion.div
-        className="w-2/3 h-[100vh] backdrop-blur-lg bg-white/10 pt-7 pl-7"
+        className="w-2/3 h-[100vh] backdrop-blur-lg bg-white/10 pt-7 pl-7 z-20"
         ref={modalRef}
         initial={{ x: 10, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}

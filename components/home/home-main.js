@@ -8,7 +8,7 @@ function HomeMain({ children }) {
     <motion.main
       initial={{ x: 50, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      transition={{ type: "spring" }}
+      transition={{ delay: 0.6, type: "spring" }}
     >
       {children}
     </motion.main>

@@ -14,6 +14,7 @@ function HeroImage() {
         <Image
           src={backgroundSm}
           alt="Space Tourism website's background image"
+          className="h-screen"
           fill
         />
       </div>
@@ -22,6 +23,7 @@ function HeroImage() {
         <Image
           src={backgroundMd}
           alt="Space Tourism website's background image"
+          className="h-screen"
           fill
         />
       </div>
@@ -30,6 +32,7 @@ function HeroImage() {
         <Image
           src={backgroundLg}
           alt="Space Tourism website's background image"
+          className="h-screen"
           fill
         />
       </div>

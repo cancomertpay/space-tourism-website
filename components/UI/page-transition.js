@@ -9,14 +9,16 @@ function PageTransition() {
     initial: {
       x: "100%",
       width: "100%",
+      opacity: 0,
     },
     animate: {
       x: "0%",
       width: "0%",
+      opacity: 1,
     },
     exit: {
       x: ["0%", "100%"],
-      width: [["0%", "100%"]],
+      width: ["0%", "100%"],
     },
   };
   return (
@@ -29,14 +31,10 @@ function PageTransition() {
         exit="exit"
         transition={{
           delay: 0.2,
-          duration: 0.6,
+          duration: 1,
           ease: "easeInOut",
         }}
-      >
-        1
-      </motion.div>
-      <div>2</div>
-      <div>3</div>
+      ></motion.div>
     </>
   );
 }

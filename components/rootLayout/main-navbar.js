@@ -22,13 +22,15 @@ function MainNavbar() {
 
   // framer motion variant
   const container = {
-    hidden: { opacity: 1, scale: 0 },
+    hidden: { opacity: 0, width: "0%" },
     visible: {
       opacity: 1,
-      scale: 1,
+      width: "100%",
       transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
+        delay: 0.9,
+        duration: 0.9,
+        delayChildren: 0.8,
+        staggerChildren: 0.4,
       },
     },
   };
@@ -47,7 +49,7 @@ function MainNavbar() {
         variants={container}
         initial="hidden"
         animate="visible"
-        className="flex bg-pale-blue/5 gap-10 px-12"
+        className="flex backdrop-blur-xl bg-pale-blue/5 gap-10 px-12 lg:px-36 lg:pr-48"
       >
         {navLinksList.map((links, index) => (
           <motion.li key={index} variants={item}>
@@ -58,9 +60,12 @@ function MainNavbar() {
             >
               <Link
                 href={links.href}
-                className="uppercase tracking-widest text-pale-blue"
+                className="uppercase tracking-widest text-pale-blue flex lg:text-lg"
               >
-                {links.title}
+                <span className="w-[15px] mr-4 font-extrabold text-white md:hidden lg:block">
+                  0{index}
+                </span>
+                <span>{links.title}</span>
               </Link>
             </div>
           </motion.li>

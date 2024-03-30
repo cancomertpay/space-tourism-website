@@ -1,40 +1,25 @@
 "use client";
 
-// next.js
-import { useRouter } from "next/router";
+// router
+import { useRouter } from "next/navigation";
 
-// framer-motion
-import { motion } from "framer-motion";
+// framer motion
+import { AnimatePresence, motion } from "framer-motion";
 
-function Template({ children }) {
-  const transitionVariants = {
-    initial: {
-      x: 20,
-      opacity: 0,
-    },
-    animate: {
-      x: 0,
-      opacity: 1,
-    },
-    exit: {
-      x: 20,
-      opacity: 0,
-    },
-  };
+// custom components
+import PageTransition from "@/components/UI/page-transition";
+
+export default function Template({ children }) {
+  const router = useRouter();
+
   return (
-    <motion.div
-      className="w-screen h-screen backdrop-blur-lg bg-primary-black"
-      variants={transitionVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={{
-        ease: "easeInOut",
-      }}
-    >
-      {children}
-    </motion.div>
+    <div>
+      <AnimatePresence mode="wait">
+        <motion.div key={router.route} className="h-full">
+          <PageTransition />
+          {children}
+        </motion.div>
+      </AnimatePresence>
+    </div>
   );
 }
-
-export default Template;

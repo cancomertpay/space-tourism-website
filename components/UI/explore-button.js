@@ -11,16 +11,14 @@ import { motion } from "framer-motion";
 function ExploreButton() {
   return (
     <div className={"flex items-center justify-center"}>
-      <div className="hover:bg-white/30 hover:backdrop-blur-sm rounded-full p-10 transition-all duration-500">
+      <div className="hover:bg-white/30 hover:backdrop-blur-sm rounded-full p-10 lg:p-14 transition-all duration-500 motion-safe:animate-pulse">
         <Link href={"/destination"}>
           <motion.div
-            whileHover={{ scale: 1.1, rotate: 360 }}
             whileTap={{
               scale: 0.9,
-              rotate: -360,
             }}
             transition={{ duration: 1, type: "spring" }}
-            className={`${bellafair.className} bg-white rounded-full text-center text-lg md:text-2xl tracking-widest uppercase px-8 md:px-10 py-16 md:py-20 text-primary-black`}
+            className={`${bellafair.className} bg-white rounded-full text-center text-lg md:text-2xl lg:text-3xl tracking-widest uppercase px-8 md:px-10 lg:px12 py-16 md:py-20 lg:py-24 text-primary-black`}
           >
             Explore
           </motion.div>
