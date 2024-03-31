@@ -3,7 +3,7 @@ import "./globals.css";
 import { barlow } from "@/lib/fonts";
 
 // custom components
-import MainHeader from "@/components/rootLayout/main-header";
+import MainHeader from "@/components/root-layout/main-header";
 
 export const metadata = {
   title: "Create Next App",
