@@ -1,27 +1,21 @@
 // next.js's image component
 import Image from "next/image";
 
-// home background images
-import backgroundSm from "@/public/assets/home/background-home-mobile.jpg";
-import backgroundMd from "@/public/assets/home/background-home-tablet.jpg";
-import backgroundLg from "@/public/assets/home/background-home-desktop.jpg";
-
-function HeroImage() {
+function PageBackground({ background }) {
   return (
     <>
       {/* for sm background image */}
-      <div className="md:hidden">
+
         <Image
-          src={backgroundSm}
+          src={`/assets/${background}/background-${background}-mobile.jpg`}
           alt="Space Tourism website's background image"
-          className="h-screen"
+          className="block md:hidden absolute w-full h-full object-cover"
           fill
         />
-      </div>
       {/* for md background image */}
       <div className="hidden md:inline-flex lg:hidden">
         <Image
-          src={backgroundMd}
+          src={`/assets/${background}/background-${background}-tablet.jpg`}
           alt="Space Tourism website's background image"
           className="h-screen"
           fill
@@ -30,7 +24,7 @@ function HeroImage() {
       {/* for lg background image */}
       <div className="hidden lg:inline-flex">
         <Image
-          src={backgroundLg}
+          src={`/assets/${background}/background-${background}-desktop.jpg`}
           alt="Space Tourism website's background image"
           className="h-screen"
           fill
@@ -40,4 +34,4 @@ function HeroImage() {
   );
 }
 
-export default HeroImage;
+export default PageBackground;

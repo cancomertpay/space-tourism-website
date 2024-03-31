@@ -8,6 +8,7 @@ import Link from "next/link";
 
 // framer motion
 import { motion } from "framer-motion";
+import { staggerChildren, staggerContainer } from "@/variants/variants";
 
 function MainNavbar() {
   // next path hook
@@ -20,39 +21,16 @@ function MainNavbar() {
     { href: "/technology", title: "Technology" },
   ];
 
-  // framer motion variant
-  const container = {
-    hidden: { opacity: 0, width: "0%" },
-    visible: {
-      opacity: 1,
-      width: "100%",
-      transition: {
-        delay: 0.9,
-        duration: 0.9,
-        delayChildren: 0.8,
-        staggerChildren: 0.4,
-      },
-    },
-  };
-  // framer motion variant
-  const item = {
-    hidden: { y: 5, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  };
-
   return (
     <nav className="hidden md:block">
       <motion.ul
-        variants={container}
+        variants={staggerContainer}
         initial="hidden"
         animate="visible"
         className="flex backdrop-blur-xl bg-pale-blue/5 gap-10 px-12 lg:px-36 lg:pr-48"
       >
         {navLinksList.map((links, index) => (
-          <motion.li key={index} variants={item}>
+          <motion.li key={index} variants={staggerChildren}>
             <div
               className={`py-9 transition-all ${
                 pathname === links.href ? "border-b-2 border-white" : ""

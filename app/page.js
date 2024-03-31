@@ -6,14 +6,14 @@ import ExploreButton from "@/components/UI/explore-button";
 import HomeHeader from "@/components/home/home-header";
 import HomeMain from "@/components/home/home-main";
 import BtnContainer from "@/components/home/home-btn-container";
-import HeroImage from "@/components/home/home-hero-image";
-import ContentContainer from "@/components/home/home-content-container";
+import ContentContainer from "@/components/UI/content-container";
+import PageBackground from "@/components/UI/page-background";
 
 export default function HomePage() {
   return (
     <section className="h-screen w-full relative overflow-hidden">
       {/* background images */}
-      <HeroImage />
+      <PageBackground background={"home"} />
 
       {/* sm & md home content */}
       <div className="lg:hidden">

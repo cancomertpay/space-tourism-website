@@ -1,7 +1,7 @@
-function DestinationPage() {
-  return (
-    <div>Test</div>
-  )
+import { redirect } from "next/navigation";
+
+async function DestinationPage() {
+  return redirect("/destination/moon");
 }
 
-export default DestinationPage
+export default DestinationPage;
