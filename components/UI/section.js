@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 function Section({ children, background, overflow }) {
   let pickedBg;
 
@@ -23,8 +27,34 @@ function Section({ children, background, overflow }) {
       break;
   }
 
+  const transitionVariants = {
+    initial: {
+      x: "100%",
+      width: "100%",
+      opacity: 0,
+    },
+    animate: {
+      x: "0",
+      width: "100%",
+      opacity: 1,
+    },
+    exit: {
+      x: ["0%", "100%"],
+      width: ["0%", "100%"],
+    },
+  };
+
   return (
-    <section
+    <motion.section
+      variants={transitionVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={{
+        delay: 0.2,
+        duration: 0.9,
+        ease: "easeInOut",
+      }}
       className={`h-screen w-full relative bg-cover ${
         pickedBg ? pickedBg : "bg-primary-black"
       } ${overflow === "hidden" && "overflow-hidden"} ${
@@ -32,7 +62,7 @@ function Section({ children, background, overflow }) {
       }`}
     >
       {children}
-    </section>
+    </motion.section>
   );
 }
 
