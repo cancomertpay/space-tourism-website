@@ -10,6 +10,7 @@ import DestinationTitle from "@/components/destination/destination-title";
 import DestinationDescription from "@/components/destination/destination-description";
 import DistanceContainer from "@/components/destination/distance-container";
 import TravelContainer from "@/components/destination/travel-container";
+import DestinationHr from "@/components/destination/destination-hr";
 
 async function DestinationDetailPage({ params }) {
   const { name, images, description, distance, travel } =
@@ -20,11 +21,16 @@ async function DestinationDetailPage({ params }) {
       <DestinationNavigation activeParam={params.destinationId} />
       <DestinationTitle>{name}</DestinationTitle>
 
-      <DestinationDescription>{description}</DestinationDescription>
+      <div className="overflow-hidden">
+        <DestinationDescription>{description}</DestinationDescription>
+      </div>
 
-      <hr className="border-pale-blue/20 mx-6 my-8" />
+      {/* <hr className="border-pale-blue/20 mx-6 my-8" /> */}
+      <div className="border-pale-blue/20 mx-6 my-8 flex items-center justify-center">
+        <DestinationHr />
+      </div>
 
-      <div>
+      <div className="overflow-hidden">
         <DistanceContainer>{distance}</DistanceContainer>
         <TravelContainer>{travel}</TravelContainer>
       </div>

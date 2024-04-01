@@ -18,7 +18,7 @@ function DestinationHeader() {
     <motion.header
       variants={headerVariants}
       initial="hidden"
-      whileInView="visible"
+      animate="visible"
       transition={{ delay: 0.8, type: "spring" }}
       className="uppercase tracking-widest flex items-center justify-center gap-5"
     >
