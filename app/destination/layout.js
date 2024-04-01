@@ -5,7 +5,7 @@ import Section from "@/components/UI/section";
 
 function layout({ children }) {
   return (
-    <Section overflow="auto" background="destination">
+    <Section overflow={"auto"} background={"destination"}>
       <ContentContainer>
         <DestinationHeader />
         <main>{children}</main>
