@@ -38,7 +38,7 @@ function DestinationNavigation({ activeParam }) {
       variants={staggerContainer}
       initial="hidden"
       animate="visible"
-      className="flex items-center justify-between mx-20"
+      className="flex items-center justify-between mx-20 md:mx-52"
     >
       {paramList.map((param) => (
         <motion.div
@@ -48,7 +48,7 @@ function DestinationNavigation({ activeParam }) {
         >
           <Link
             href={param.href}
-            className={`text-sm uppercase tracking-widest z-20 ${
+            className={`text-sm md:text-xl uppercase tracking-widest z-20 ${
               activeParam === param.name ? "text-white" : "text-pale-blue"
             }`}
           >

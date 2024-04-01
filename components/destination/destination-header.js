@@ -20,7 +20,7 @@ function DestinationHeader() {
       initial="hidden"
       animate="visible"
       transition={{ delay: 0.8, type: "spring" }}
-      className="uppercase tracking-widest flex items-center justify-center gap-5"
+      className="uppercase tracking-widest flex items-center justify-center gap-5 md:justify-start md:pl-10 md:text-2xl"
     >
       <span className="font-bold text-white/20 ">01</span>
       <h1 className="text-white">Pick your destination</h1>

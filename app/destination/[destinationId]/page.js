@@ -1,7 +1,5 @@
 // get data
 import { getDestinationData } from "@/lib/destinations";
-// next fonts
-import { bellafair } from "@/lib/fonts";
 
 // custom components
 import DestinationImage from "@/components/destination/destination-hero-img";
@@ -32,20 +30,23 @@ async function DestinationDetailPage({ params }) {
   return (
     <article>
       <DestinationImage src={images.webp} alt={`${name}'s image`} name={name} />
-      <DestinationNavigation activeParam={params.destinationId} />
-      <DestinationTitle>{name}</DestinationTitle>
+      <div className="bg-primary-black/5 backdrop-blur-sm py-8">
+        <DestinationNavigation activeParam={params.destinationId} />
 
-      <div className="overflow-hidden">
-        <DestinationDescription>{description}</DestinationDescription>
-      </div>
+        <DestinationTitle>{name}</DestinationTitle>
 
-      <div className="border-pale-blue/20 mx-6 my-8 flex items-center justify-center">
-        <DestinationHr />
-      </div>
+        <div className="overflow-hidden">
+          <DestinationDescription>{description}</DestinationDescription>
+        </div>
 
-      <div className="overflow-hidden">
-        <DistanceContainer>{distance}</DistanceContainer>
-        <TravelContainer>{travel}</TravelContainer>
+        <div className="border-pale-blue/20 mx-6 my-8 flex items-center justify-center">
+          <DestinationHr />
+        </div>
+
+        <div className="overflow-hidden md:flex md:items-center: md:justify-center md:gap-32">
+          <DistanceContainer>{distance}</DistanceContainer>
+          <TravelContainer>{travel}</TravelContainer>
+        </div>
       </div>
     </article>
   );

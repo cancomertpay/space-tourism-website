@@ -29,7 +29,7 @@ function DestinationTitle({ children }) {
       variants={staggerContainer}
       initial="hidden"
       animate="visible"
-      className={`my-8 text-6xl uppercase text-white tracking-widest ${bellafair.className}`}
+      className={`my-8 text-6xl md:text-8xl uppercase text-white tracking-widest ${bellafair.className}`}
     >
       {Array.from(children).map((letter, index) => (
         <motion.span variants={staggerChildren} key={index}>

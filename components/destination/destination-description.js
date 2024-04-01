@@ -11,7 +11,7 @@ function DestinationDescription({ children }) {
         delay: 0.8,
         type: "spring",
       }}
-      className="mx-6 text-center leading-loose text-pale-blue"
+      className="mx-6 md:mx-20 md:text-xl text-center leading-loose text-pale-blue"
     >
       {children}
     </motion.p>
