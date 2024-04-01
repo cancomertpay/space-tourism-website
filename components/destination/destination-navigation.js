@@ -38,7 +38,7 @@ function DestinationNavigation({ activeParam }) {
       variants={staggerContainer}
       initial="hidden"
       animate="visible"
-      className="flex items-center justify-between mx-20 md:mx-52"
+      className="flex items-center justify-between mx-20 md:mx-52 lg:mx-0 lg:justify-start lg:gap-10"
     >
       {paramList.map((param) => (
         <motion.div

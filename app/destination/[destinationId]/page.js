@@ -28,9 +28,9 @@ async function DestinationDetailPage({ params }) {
   const { name, images, description, distance, travel } =
     await getDestinationData(params.destinationId);
   return (
-    <article>
+    <article className="lg:flex lg:items-center lg:justify-around">
       <DestinationImage src={images.webp} alt={`${name}'s image`} name={name} />
-      <div className="bg-primary-black/5 backdrop-blur-sm py-8">
+      <div className="bg-primary-black/5 backdrop-blur-sm py-8 lg:flex-1 lg:px-10">
         <DestinationNavigation activeParam={params.destinationId} />
 
         <DestinationTitle>{name}</DestinationTitle>
@@ -39,11 +39,11 @@ async function DestinationDetailPage({ params }) {
           <DestinationDescription>{description}</DestinationDescription>
         </div>
 
-        <div className="border-pale-blue/20 mx-6 my-8 flex items-center justify-center">
+        <div className="border-pale-blue/20 mx-6 my-8 flex items-center justify-center lg:mx-0 ">
           <DestinationHr />
         </div>
 
-        <div className="overflow-hidden md:flex md:items-center: md:justify-center md:gap-32">
+        <div className="overflow-hidden md:flex md:items-center: md:justify-center lg:justify-start md:gap-32">
           <DistanceContainer>{distance}</DistanceContainer>
           <TravelContainer>{travel}</TravelContainer>
         </div>

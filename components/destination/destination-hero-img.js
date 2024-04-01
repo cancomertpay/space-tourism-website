@@ -33,6 +33,7 @@ function DestinationImage({ src, alt, name }) {
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -20 }}
       transition={{ delay: 0.8, type: "spring" }}
+      className="lg:flex-1"
     >
       <motion.div
         animate={{ rotate: 360 }}
@@ -49,7 +50,7 @@ function DestinationImage({ src, alt, name }) {
           alt={alt}
           width={170}
           height={170}
-          className="md:w-[300px] md:h-[300px]"
+          className="md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px]"
           priority
         />
       </motion.div>
