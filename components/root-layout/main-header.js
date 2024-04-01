@@ -34,7 +34,7 @@ function MainHeader() {
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.9, type: "tween" }}
-      className="z-10 w-full fixed top-0 lg:top-10 flex items-center justify-between p-5 md:p-0 bg-primary-black/40 backdrop-blur-sm md:bg-transparent md:backdrop-blur-none"
+      className="z-10 w-full fixed top-0 lg:top-10 flex items-center justify-between p-5 md:p-0 bg-primary-black/40 backdrop-blur-sm "
     >
       {/* brand logo */}
       <motion.div
@@ -58,7 +58,7 @@ function MainHeader() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.6 }}
-        className="hidden lg:block border-b-2 border-pale-blue/30 w-1/3 -mr-28 z-20"
+        className="hidden lg:block border-b-2 border-pale-blue/20 flex-1"
       />
       {/* hamburger icon for only sm devices */}
       {!isAsideOpen && (

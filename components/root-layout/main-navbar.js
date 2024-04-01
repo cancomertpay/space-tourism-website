@@ -27,7 +27,7 @@ function MainNavbar() {
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
-        className="flex bg-primary-black/40 backdrop-blur-sm gap-10 px-12 lg:px-36 lg:pr-48"
+        className="flex bg-primary-black/40 lg:bg-primary-black/80 backdrop-blur gap-10 px-12 lg:px-36 lg:pr-48"
       >
         {navLinksList.map((links, index) => (
           <motion.li key={index} variants={staggerChildren}>

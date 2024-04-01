@@ -12,7 +12,7 @@ function DestinationHr() {
         duration: 1,
         ease: "linear",
       }}
-      className="border-pale-blue/20 mx-6 my-8"
+      className="border-pale-blue/20 mx-6 my-8 lg:mx-0"
     />
   );
 }
