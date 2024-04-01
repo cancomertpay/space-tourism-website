@@ -9,7 +9,6 @@ function TravelContainer({ children }) {
       initial={{ x: -30, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ delay: 1, type: "spring" }}
-      className="pb-10"
     >
       <motion.p
         initial={{ y: 10, opacity: 0 }}

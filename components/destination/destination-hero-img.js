@@ -42,9 +42,16 @@ function DestinationImage({ src, alt, name }) {
           duration: rotationDuration,
           ease: "linear",
         }}
-        className="inline-flex justify-center items-center my-8"
+        className="inline-flex justify-center items-center my-8 md:my-14"
       >
-        <Image src={src} alt={alt} width={170} height={170} priority />
+        <Image
+          src={src}
+          alt={alt}
+          width={170}
+          height={170}
+          className="md:w-[300px] md:h-[300px]"
+          priority
+        />
       </motion.div>
     </motion.div>
   );

@@ -33,15 +33,15 @@ function MainHeader() {
     <motion.header
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.8, type: "spring" }}
-      className="z-10 w-full fixed top-0 lg:top-10 flex items-center justify-between p-5 md:p-0"
+      transition={{ delay: 0.9, type: "tween" }}
+      className="z-10 w-full fixed top-0 lg:top-10 flex items-center justify-between p-5 md:p-0 bg-primary-black/40 backdrop-blur-sm md:bg-transparent md:backdrop-blur-none"
     >
       {/* brand logo */}
       <motion.div
         whileTap={{
           scale: 0.8,
         }}
-        className="md:py-5 md:mx-10 flex items-center justify-center"
+        className="md:mx-10 flex items-center justify-center"
       >
         <Link href="/">
           <Image
@@ -49,6 +49,7 @@ function MainHeader() {
             alt="Space tourism's brand logo."
             width="42"
             height="42"
+            className="md:w-[52px] md:h-[52px]"
           />
         </Link>
       </motion.div>

@@ -105,7 +105,7 @@ function Modal({ onClose }) {
                   <span className="w-[15px] mr-4 font-extrabold text-white">
                     0{index}
                   </span>
-                  <span className="uppercase tracking-widest font-light text-pale-blue">
+                  <span className="uppercase tracking-widest text-pale-blue">
                     {links.title}
                   </span>
                 </Link>
