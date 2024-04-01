@@ -12,12 +12,26 @@ import DistanceContainer from "@/components/destination/distance-container";
 import TravelContainer from "@/components/destination/travel-container";
 import DestinationHr from "@/components/destination/destination-hr";
 
+export async function generateMetadata({ params, searchParams }) {
+  // fetch data
+  const { metadata } = await getDestinationData(params.destinationId);
+
+  if (!metadata) {
+    return;
+  }
+
+  return {
+    title: metadata.title,
+    description: metadata.description,
+  };
+}
+
 async function DestinationDetailPage({ params }) {
   const { name, images, description, distance, travel } =
     await getDestinationData(params.destinationId);
   return (
     <article>
-      <DestinationImage src={images.webp} alt={`${name}'s image`} />
+      <DestinationImage src={images.webp} alt={`${name}'s image`} name={name} />
       <DestinationNavigation activeParam={params.destinationId} />
       <DestinationTitle>{name}</DestinationTitle>
 
@@ -25,7 +39,6 @@ async function DestinationDetailPage({ params }) {
         <DestinationDescription>{description}</DestinationDescription>
       </div>
 
-      {/* <hr className="border-pale-blue/20 mx-6 my-8" /> */}
       <div className="border-pale-blue/20 mx-6 my-8 flex items-center justify-center">
         <DestinationHr />
       </div>

@@ -5,7 +5,28 @@ import Image from "next/image";
 // framer motion
 import { motion } from "framer-motion";
 
-function DestinationImage({ src, alt }) {
+function DestinationImage({ src, alt, name }) {
+  let rotationDuration = 0;
+
+  switch (name) {
+    case "moon":
+      rotationDuration = 27.32;
+      break;
+
+    case "mars":
+      rotationDuration = 24.62;
+      break;
+
+    case "titan":
+      rotationDuration = 15.94;
+      break;
+
+    case "europa":
+      rotationDuration = 3.55;
+      break;
+    default:
+      break;
+  }
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
@@ -18,7 +39,7 @@ function DestinationImage({ src, alt }) {
         transition={{
           repeat: Infinity,
           delay: 1,
-          duration: 12,
+          duration: rotationDuration,
           ease: "linear",
         }}
         className="inline-flex justify-center items-center my-8"

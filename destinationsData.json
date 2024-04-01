@@ -1,6 +1,10 @@
 {
   "destinations": [
     {
+      "metadata": {
+        "title": "Go to the Moon with Space Tourism",
+        "description": "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed."
+      },
       "name": "moon",
       "images": {
         "png": "/assets/destination/image-moon.png",
@@ -11,6 +15,10 @@
       "travel": "3 days"
     },
     {
+      "metadata": {
+        "title": "Go to the Mars with Space Tourism",
+        "description": "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system."
+      },
       "name": "mars",
       "images": {
         "png": "/assets/destination/image-mars.png",
@@ -21,6 +29,10 @@
       "travel": "9 months"
     },
     {
+      "metadata": {
+        "title": "Go to the Europa with Space Tourism",
+        "description": "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream."
+      },
       "name": "europa",
       "images": {
         "png": "/assets/destination/image-europa.png",
@@ -31,6 +43,10 @@
       "travel": "3 years"
     },
     {
+      "metadata": {
+        "title": "Go to the Titan with Space Tourism",
+        "description": "The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!)."
+      },
       "name": "titan",
       "images": {
         "png": "/assets/destination/image-titan.png",

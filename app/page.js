@@ -7,13 +7,11 @@ import HomeHeader from "@/components/home/home-header";
 import HomeMain from "@/components/home/home-main";
 import BtnContainer from "@/components/home/home-btn-container";
 import ContentContainer from "@/components/UI/content-container";
-import PageBackground from "@/components/UI/page-background";
+import Section from "@/components/UI/section";
 
 export default function HomePage() {
   return (
-    <section className="h-screen w-full relative overflow-hidden">
-      {/* background images */}
-      <PageBackground background={"home"} />
+    <Section overflow={"hidden"} background={"home"}>
 
       {/* sm & md home content */}
       <div className="lg:hidden">
@@ -75,6 +73,6 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
