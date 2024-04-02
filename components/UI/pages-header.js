@@ -3,7 +3,7 @@
 // framer motion
 import { motion } from "framer-motion";
 
-function DestinationHeader() {
+function PagesHeader({ title, index }) {
   const headerVariants = {
     hidden: {
       x: 10,
@@ -22,10 +22,10 @@ function DestinationHeader() {
       transition={{ delay: 0.8, type: "spring" }}
       className="uppercase tracking-widest flex items-center justify-center gap-5 md:justify-start md:pl-10 md:text-2xl"
     >
-      <span className="font-bold text-white/20 ">01</span>
-      <h1 className="text-white">Pick your destination</h1>
+      <span className="font-bold text-white/20 ">{index}</span>
+      <h1 className="text-white">{title}</h1>
     </motion.header>
   );
 }
 
-export default DestinationHeader;
+export default PagesHeader;
