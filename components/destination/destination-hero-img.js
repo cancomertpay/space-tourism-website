@@ -33,7 +33,7 @@ function DestinationImage({ src, alt, name }) {
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -20 }}
       transition={{ delay: 0.8, type: "spring" }}
-      className="lg:flex-1"
+      className="lg:flex-1 overflow-y-hidden"
     >
       <motion.div
         animate={{ rotate: 360 }}
